@@ -1,12 +1,12 @@
-from pyscript import display, document
+from pyscript import document
+# Variables
+country = ["France", "Germany", "Ireland", "Italy", "Netherlands", "Norway", "Spain","Switzerland"]
+nickname = ["The Hexagon","The Land of Poets and Thinkers", "The Emerald Isle", "Bel Phase (The Beautiful Country)","The Land of Windmills and Tulips","The Land of the Midnight Sun", "The Land of Flamenco and Fiesta","The Land of the Alps"]
+# Function
+def show_name(e):
+    selected_country = document.getElementById("country").value
 
-def student_club(e):
-    document.getElementById("student").innerHTML = ''
-    studentnamefirst = document.getElementById("student_name_first").value
-    ictclubfirst = ['cean', 'joaquin', 'cholo', 'JM', 'mohammad']
-    studentnamelast = document.getElementById("student_name_last").value
-    ictclublast = ['alagar', 'tabije', 'comanda', 'piansay', 'calaca']
-    member_checker = studentnamefirst in ictclubfirst and studentnamelast in ictclublast
-    display_message = (f'Sorry, you are not a member', f'Congratulations, {studentnamefirst} you are now a part of the OBMC ict club')
+    index = country.index(selected_country)
+    selected_nickname = nickname[index]
 
-    display(display_message[member_checker], target="student")
+    document.getElementById("result").innerText = selected_nickname
